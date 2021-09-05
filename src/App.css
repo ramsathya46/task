@@ -1,0 +1,38 @@
+.dark {
+  background: #333;
+  color: #fff;
+}
+.light {
+  background: red;
+  color: #333;
+}
+
+.Sample {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: block; 
+  color: #92a8d1;
+}
+
+input {
+  display: block;
+  border-style: solid;
+  border-color: #92a8d1;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.cardData{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
