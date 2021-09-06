@@ -33,7 +33,7 @@ function Login() {
             <Row>
             <Col>
                 <label>UserName
-                <input placeholder="FirstName " ref={userName} />
+                <input placeholder="UserName " ref={userName} />
                 </label><br></br>
             </Col>
             </Row>
