@@ -79,12 +79,10 @@ function View() {
                             <td>{data.phone}</td>
                             <td>{data.address.city}</td>
                         </tr>
-    
-                    
-                     </tbody>
+                    </tbody>
             </Table>
 
-            <Button variant="secondary" onClick={() => paginateBack()}>Go Back</Button> 
+            <Button variant="secondary" onClick={() => paginateBack(data.id)}>Go Back</Button> 
             <Button variant="info" onClick={() => paginateData(data.id)}>Next</Button>
              
                         

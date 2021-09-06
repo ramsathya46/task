@@ -25,7 +25,7 @@ function Api(props) {
    
     return (
         <React.Fragment>
-            <Table striped bordered hover variant="dark">
+            <Table>
                 <thead>
                     <tr>
                         <th>S.No</th>
