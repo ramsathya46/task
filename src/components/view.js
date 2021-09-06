@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useLocation } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
 import axios from 'axios';
+import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import '../App.css'
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
@@ -27,9 +28,13 @@ function View() {
       })
     },[])
 
-    function paginateData(data){
-        if(data< myVar.length){
-            setData(myVar[data]) 
+    function paginateData(value){
+        if(value< myVar.length){
+            setData(myVar[value]) 
+            history.push({
+                pathname:`/data/${value + 1}`,
+                state:{data:data}
+            })
                        
         }
         else{
@@ -56,21 +61,33 @@ function View() {
    
     return (
         <React.Fragment>
-            <Row><Col>
-            <Card className="border d-flex align-items-center justify-content-center">               
-                <Card.Body>
-                    <Card.Title>Name: {data.name}</Card.Title>
-                    <Card.Title>Email :{data.email}</Card.Title>
-                    <Card.Title>MobileNo :{data.phone}</Card.Title>
-                    <Card.Title>Company :{data.company.name}</Card.Title>
-                    <Card.Text>Address :{data.address.city},
-                    </Card.Text>
-                    <Button variant="primary" onClick={() => paginateBack()}>Go Back</Button> {'     '}
-                    <Button variant="success" onClick={() => paginateData(data.id)}>Next</Button>
-                </Card.Body>
-            </Card>
-            </Col>
-            </Row>
+            <Table striped bordered hover variant="light">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    <tbody>                       
+                        <tr>
+                            <td>{data.id}</td>
+                            <td>{data.name}</td>
+                            <td>{data.email}</td>
+                            <td>{data.phone}</td>
+                            <td>{data.address.city}</td>
+                        </tr>
+    
+                    
+                     </tbody>
+            </Table>
+
+            <Button variant="secondary" onClick={() => paginateBack()}>Go Back</Button> 
+            <Button variant="info" onClick={() => paginateData(data.id)}>Next</Button>
+             
+                        
         </React.Fragment>
     )
 }

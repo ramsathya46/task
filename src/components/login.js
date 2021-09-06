@@ -47,7 +47,7 @@ function Login() {
             <Row>
             <Col>
                 <div className="d-grid gap-2">
-                <Button variant="outline-primary" type="submit">Submit</Button>
+                <Button variant="success" type="submit">Submit</Button>
                 </div>
             </Col>
             </Row>
